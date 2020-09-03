@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>OLX Shopping</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Carousel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Disabled</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+      </ol>
+      
+      <div class="carousel-inner">
+        <div class="carousel-item ">
+          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+     
+     
+     
+        <div class="carousel-item active">
+          <img class="second-slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSyxLuGt5DRDj3BNyObXxAAWtAk8dZzuLrwCg&usqp=CAU" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1 style = "color: black;" >Online Shopping.
+              </h1>
+              <p style = "color: black;">The more you shop, the more happier you become.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+    
+     
+        <div class="carousel-item">
+          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+     
+      </div>
+     
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      
+      <div class="row">
+       {% for item in items%}
+
+        <div class="col-lg-4">
+          <img class="rounded-circle" 
+          src="https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F0x0.jpg%3FcropX1%3D790%26cropX2%3D5350%26cropY1%3D784%26cropY2%3D3349"  
+          width="140" height="140">
+
+          <br><h2>{{item.name}}</h2><br>
+          <p>{{item.desc}}</p>
+          <p> {{item.price}}</p>
+         <br> <p><a class="btn btn-secondary" href="{% url 'view_cart'%}" role="button" style="background-color:green;">Add To Cart</a></p>
+         
+
+        </div>
+        
+        {%endfor%}
+        
+
+      </div><!-- /.row -->
+     
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <div class="col-md-5">      
+          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="data:image/jpeg;base64,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"
+           data-holder-rendered="true">
+           <br>
+           <br>
+           <h3 style="color: black;">Apple iPhone XR 128GB</h3>
+
+        </div>
+
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="https://i.pinimg.com/736x/7f/71/e2/7f71e2535aa8050e375f49fc9bc55d53.jpg" data-holder-rendered="true">
+         <br>
+         <br> <h3 style="color: black;">Massive Star Type Foldable Glasses</h3>
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="https://www.rollingstone.com/wp-content/uploads/2020/07/91LVUvUnTlL._AC_SL1500_.jpg?w=1024" data-holder-rendered="true">
+          <br>
+          <br> 
+          <br>
+          <h3 style="color: black;">Canon DSLR Digital Camera</h3>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>© 2017-2018 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+  </main>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
+  <defs>
+  <style type="text/css">
+  </style>
+</defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text>
+</svg>
+</body>
+
+</html>
